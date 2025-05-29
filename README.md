@@ -58,31 +58,30 @@
     <sup>12</sup>Nanjing University
   </p>
 
-  <p><sup>†</sup>Equal Contribution,<sup>*</sup> Project Leader (work completed during internship at Bytedance)<sup>✉️</sup>Corresponding Author, </p>
+  <p><sup>†</sup>Equal Contribution, <sup>*</sup>Project Leader (work completed during internship at Bytedance), <sup>✉️</sup>Corresponding Author, </p>
 
-<div>Coressponding to <sup>2</sup>wan.512@osu.edu, <sup>1</sup>sheny@bytedance.com</div>
+<div>Corresponding to <sup>2</sup><a href="mailto:wan.512@osu.edu">wan.512@osu.edu</a>, <sup>1</sup><a href="mailto:sheny@bytedance.com">sheny@bytedance.com</a>
+</div>
 </div>
 
 ## 🔥 Quick Start
 
-### 1. Environment Setup
+### Self-Reflection SFT Data Curation
 
 ```bash
 # Clone the repository
- git clone https://github.com/SUSTechBruce/SRPO_MLLMs
- cd SRPO_MLLMs
+git clone https://github.com/SUSTechBruce/SRPO_MLLMs
+cd SRPO_MLLMs
 
 # Install dependencies
 pip install -r requirements.txt
 ```
 
-
-
-### 2. Data Preparation
+### 1. Data Preparation
 - Download data from [Mulberry-SFT](https://huggingface.co/datasets/HuanjinYao/Mulberry-SFT) and [LLaVA-CoT-100k](https://huggingface.co/datasets/Xkev/LLaVA-CoT-100k), or prepare your own dataset in a similar format.
 - Place your input data (e.g., `input.jsonl`) in a designated data directory (such as `data/`).
 
-Example (LLaVA-CoT-100k format):
+**Example (LLaVA-CoT-100k format):**
 ```json
 {
   "query": "How many Mexican municipal leaders were killed in the previous year? Answer the question using a single word or phrase.",
@@ -91,11 +90,11 @@ Example (LLaVA-CoT-100k format):
   "content": "<SUMMARY> I will examine the image to determine the number of Mexican municipal leaders killed in the previous year by analyzing the data presented in the bar chart. </SUMMARY>\n\n<CAPTION> The image displays a bar chart illustrating the number of Mexican municipal leaders killed each year from 2005 to 2018. Each bar represents the total number of victims for a specific year. </CAPTION>\n\n<REASONING> I will look at the bar corresponding to the year 2017 to find the number of Mexican municipal leaders killed in the previous year. The chart indicates that in 2017, there were 21 victims, as shown by the height of the bar labeled for that year. </REASONING>\n\n<CONCLUSION> 21 </CONCLUSION>"
 }
 ```
-- Your data must include at least the fields: `query`, `answer`, and `image`. The `content` field (as in Mulberry-SFT and LLaVA-CoT-100k) is used for image description extractio (optional).
+- Your data must include at least the fields: `query`, `answer`, and `image`. The `content` field (as in Mulberry-SFT and LLaVA-CoT-100k) is used for image description extraction (optional).
 - Place images in a folder (e.g., `images/`).
 - For multimodal tasks, ensure the `image` field in your input file contains the correct relative path or URL to the image.
 
-### 3. SFT pipeline
+### 2. Data Construction
 
 #### Answer Evaluation
 ```bash
@@ -103,10 +102,11 @@ python -m llm_sft.answer_eval \
     --model Qwen/Qwen2.5-VL-7B-Instruct \
     --model_type remote \
     --platform VLLM \
-    --input_path /the-path-to-your-prepared-data \
-    --image_dir /the-path-to-your-image-dir\
-   
+    --input_path /path/to/your/data.jsonl \
+    --image_dir /path/to/your/images
 ```
+> **Note:**
+> This command runs the LLM to answer the queries in your prepared data.
 
 #### Reflection Evaluation
 ```bash
@@ -119,27 +119,33 @@ python -m llm_sft.reflection_eval \
     --output_path /path/to/save/reflections.jsonl
 ```
 > **Note:**
+> - This command lets the advanced MLLM generate reflections for each sample.
 > - If you use `openai` or `azure` as the platform, images will be automatically encoded as base64 and sent to the API by default.
 > - For large images or to avoid base64 encoding, you can upload your images to a public server or image hosting service, then set the `--image_url` argument to the accessible URL prefix.
 > - Alternatively, you can implement your own upload logic in `utils/upload_utils.py` and use the `--upload_image` flag to enable custom image uploading.
 
-
 #### Image Description Extraction
 ```bash
-python -m llm_sft.image_description\
-    --input_path /path-to-your-prepared-data \
+python -m llm_sft.image_description \
+    --input_path /path/to/your/data.jsonl \
     --source cot100k \
-    --output_path /the-path-you-want-to-save-the-file-as \```
+    --output_path /path/to/save/image_descriptions.jsonl
 ```
+> **Note:**
+> - Run this only if you want to use unimodal models (e.g., o3-mini) for reflection, or need to extract image descriptions for other purposes.
+> - You can extract image descriptions from [Mulberry-SFT](https://huggingface.co/datasets/HuanjinYao/Mulberry-SFT) and [LLaVA-CoT-100k](https://huggingface.co/datasets/Xkev/LLaVA-CoT-100k) using our predefined patterns, or from your own dataset with a custom pattern.
 
-### 4. Output
+### 3. Output
 - Results and checkpoints are saved as JSONL files in the specified locations.
 - Each result contains the question, image, model answer, standard answer, and reasoning chain.
 
-### 5. Workflow
-You can also directly run the shell scripts provided in the `/scripts` directory (such as `eval_answer.sh`, `eval_reflection.sh`, `eval_extract_description.sh`) for one-click batch evaluation and image description extraction.
+### 4. Workflow
+You can also run the shell scripts provided in the `/scripts` directory (such as `eval_answer.sh`, `eval_reflection.sh`, `eval_extract_description.sh`) for one-click batch evaluation and image description extraction.
 
 ---
+
+## Reproducibility
+You can use the SFT data we provide in our [Hugging Face dataset](https://huggingface.co/SRPOMLLMs), or prepare your own using the methods described above.
 
 ## 📄 Citation
 If you use SRPO or this codebase, please cite our paper:
@@ -147,4 +153,3 @@ If you use SRPO or this codebase, please cite our paper:
 ```bibtex
 placeholder
 ```
-
