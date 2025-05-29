@@ -58,7 +58,7 @@
     <sup>12</sup>Nanjing University
   </p>
 
-  <p><sup>†</sup>Equal Contribution, <sup>*</sup>Project Leader (work completed during internship at Bytedance), <sup>✉️</sup>Corresponding Author, </p>
+  <p><sup>*</sup>Project Leader (work completed during internship at Bytedance), <sup>†</sup>Equal Contribution, <sup>✉️</sup>Corresponding Author, </p>
 
 <div>Corresponding to <sup>2</sup><a href="mailto:wan.512@osu.edu">wan.512@osu.edu</a>, <sup>1</sup><a href="mailto:sheny@bytedance.com">sheny@bytedance.com</a>
 </div>
