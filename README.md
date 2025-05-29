@@ -66,7 +66,7 @@
 
 ## 🔥 Quick Start
 
-### Self-Reflection SFT Data Curation
+## Self-Reflection SFT Data Curation
 
 ```bash
 # Clone the repository
@@ -144,8 +144,12 @@ You can also run the shell scripts provided in the `/scripts` directory (such as
 
 ---
 
-## Reproducibility
+### 5. Reproducibility
 You can use the SFT data we provide in our [Hugging Face dataset](https://huggingface.co/SRPOMLLMs), or prepare your own using the methods described above.
+
+## TODO: Self-Reflection Cold Start 
+
+## TODO: Self-Reflection RL Training
 
 ## 📄 Citation
 If you use SRPO or this codebase, please cite our paper:
