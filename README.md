@@ -9,21 +9,25 @@
 
   <p>If you find this project useful, please give us a star 🌟.</p>
 
-  <p>
-    <a href="https://arxiv.org/abs/xxxx.xxxxx">
-      <img src="https://img.shields.io/badge/Paper-Arxiv-red?logo=arxiv">
-    </a>
-    <a href="https://huggingface.co/SRPOMLLMs">
-      <img src="https://img.shields.io/badge/Hugging%20Face-Models-blue?logo=huggingface">
-    </a>
-    <a href="https://huggingface.co/SRPOMLLMs/SRPO-Dataset">
-      <img src="https://img.shields.io/badge/Dataset-Huggingface-yellow?logo=huggingface">
-    </a>
-  </p>
+ <p>
+  <a href="https://arxiv.org/abs/xxxx.xxxxx">
+    <img src="https://img.shields.io/badge/Arxiv-Paper-red?logo=arxiv">
+  </a>
+  <a href="https://huggingface.co/datasets/SRPOMLLMs/srpo-sft-data">
+    <img src="https://img.shields.io/badge/Hugging%20Face-Models-blue?logo=huggingface">
+  </a>
+  <a href="https://huggingface.co/datasets/SRPOMLLMs/srpo-sft-data">
+    <img src="https://img.shields.io/badge/Hugging%20Face-Dataset-yellow?logo=huggingface">
+  </a>
+  <a href="https://srpo.pages.dev">
+    <img src="https://img.shields.io/badge/Project-Page-orange?logo=googlechrome&logoColor=FFCD00">
+  </a>
+</p>
+
 
   <p>
     <a href="https://scholar.google.com/citations?hl=en&user=EVj1cNoAAAAJ">Zhongwei Wan</a><sup>2†*✉️</sup>,
-    Zhihao Dou<sup>3†</sup>,
+    <a href="https://www.linkedin.com/in/zhihao-dou-760276261/">Zhihao Dou</a><sup>3†</sup>,
     <a href="https://scholar.google.com/citations?user=HED_458AAAAJ&hl=zh-CN">Che Liu</a><sup>4</sup>,
     Yu Zhang<sup>11</sup>,
     <a href="https://dongfeicui.github.io">Dongfei Cui</a><sup>5</sup>,
