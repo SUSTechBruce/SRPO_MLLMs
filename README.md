@@ -159,10 +159,10 @@ You can use the SFT data we provide in our [Hugging Face dataset](https://huggin
 If you use SRPO or this codebase, please cite our paper:
 
 ```bibtex
-@article{gao2025boosting,
-  title={Boosting Adversarial Transferability via Commonality-Oriented Gradient Optimization},
-  author={Gao, Yanting and Liu, Yepeng and Liu, Junming and Zhang, Qi and Zhang, Hongyun and Miao, Duoqian and Zhao, Cairong},
-  journal={arXiv preprint arXiv:2506.06992},
+@article{wan2025srpo,
+  title={SRPO: Enhancing Multimodal LLM Reasoning via Reflection-Aware Reinforcement Learning},
+  author={Wan, Zhongwei and Dou, Zhihao and Liu, Che and Zhang, Yu and Cui, Dongfei and Zhao, Qinjian and Shen, Hui and Xiong, Jing and Xin, Yi and Jiang, Yifan and others},
+  journal={arXiv preprint arXiv:2506.01713},
   year={2025}
 }
 ```
