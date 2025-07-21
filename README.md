@@ -160,7 +160,7 @@ If you use SRPO or this codebase, please cite our paper:
 
 ```bibtex
 @article{wan2025srpo,
-  title={SRPO: Enhancing Multimodal LLM Reasoning via Reflection-Aware Reinforcement Learning},
+  title={Srpo: Enhancing multimodal llm reasoning via reflection-aware reinforcement learning},
   author={Wan, Zhongwei and Dou, Zhihao and Liu, Che and Zhang, Yu and Cui, Dongfei and Zhao, Qinjian and Shen, Hui and Xiong, Jing and Xin, Yi and Jiang, Yifan and others},
   journal={arXiv preprint arXiv:2506.01713},
   year={2025}
