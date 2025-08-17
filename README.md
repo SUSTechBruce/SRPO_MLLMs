@@ -151,9 +151,64 @@ You can also run the shell scripts provided in the `/scripts` directory (such as
 ### 5. Reproducibility
 You can use the SFT data we provide in our [Hugging Face dataset](https://huggingface.co/SRPOMLLMs), or prepare your own using the methods described above.
 
-## TODO: Self-Reflection Cold Start 
+## Self-Reflection Cold Start 
+After you preprocess self-reflection sft data, please install LLaMA-Factory for Self-Reflection SFT:
 
-## TODO: Self-Reflection RL Training
+```bash
+cd SRPO_MLLMs/srpo_sft/LLaMA-Factory
+pip install -e ".[torch,metrics]" --no-build-isolation
+```
+Then run:
+
+```bash
+llamafactory-cli train examples/train_full/qwen2_5vl_full_sft.yaml ## for 7B
+llamafactory-cli train examples/train_full/qwen2_5vl_full_sft_32b.yaml ## for 32B
+```
+
+## Self-Reflection RL Training
+
+After the self-reflection SFT stage, we obtain updated model weights. Based on these weights, we then conduct self-reflection RL training. We provide implementations in both the  `OpenRLHF` and `Verl` frameworks (with the results reported in the main paper derived from the OpenRLHF version).
+
+### OpenRLHF Version
+Install the `OpenRLHF` Version
+```bash
+cd SRPO_MLLMs/spro_rl_train/openrlhf_srpo
+pip install -e .[vllm]
+pip install flash_attn --no-build-isolation
+```
+
+Start to train:
+```bash
+sh examples/scripts/run_7b_sft_srpo_filter_data.sh  # for 7B
+sh examples/scripts/run_32b_sft_srpo.sh  # for 32B
+```
+
+
+
+### Verl Version
+
+Install the `Verl` Version
+```bash
+cd SRPO_MLLMs/spro_rl_train/verl_srpo
+pip install -e .
+```
+
+Start to train:
+```bash
+sh examples/qwen2_5_vl_7b_srpo.sh  # for 7B
+sh examples/qwen2_5_vl_32b_srpo.sh  # for 32B
+```
+
+### Easy Step to Evaluation
+
+```bash
+cd SRPO_MLLMs/spro_rl_train/openrlhf_srpo/eval/mathverse
+python evaluate_mathverse.py
+python mathverse/extract_calculate.py --output_file xxx.json
+```
+For the results reported in the paper, we adopt the benchmark test data from [lmms-eval](https://github.com/EvolvingLMMs-Lab/lmms-eval).
+
+
 
 ## 📄 Citation
 If you use SRPO or this codebase, please cite our paper:
