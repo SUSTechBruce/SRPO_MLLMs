@@ -208,7 +208,9 @@ python mathverse/extract_calculate.py --output_file xxx.json
 ```
 For the results reported in the paper, we adopt the benchmark test data from [lmms-eval](https://github.com/EvolvingLMMs-Lab/lmms-eval).
 
+## Acknowledgements
 
+We acknowledge the outstanding open-source contributions from [OpenRLHF](https://github.com/OpenRLHF/OpenRLHF), [Verl](https://github.com/volcengine/verl), [EasyR1](https://github.com/hiyouga/EasyR1) for their open-source techniques and base models, which have enabled us to further our exploration.
 
 ## 📄 Citation
 If you use SRPO or this codebase, please cite our paper:
