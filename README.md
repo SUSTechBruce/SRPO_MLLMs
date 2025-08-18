@@ -151,6 +151,15 @@ You can also run the shell scripts provided in the `/scripts` directory (such as
 ### 5. Reproducibility
 You can use the SFT data we provide in our [Hugging Face dataset](https://huggingface.co/SRPOMLLMs), or prepare your own using the methods described above.
 
+
+## Dataset
+> **Self-reflection SFT** dataset (for Self-reflection Supervised Fine-Tuning):  
+> [srpo-sft-data on Hugging Face Datasets](https://huggingface.co/datasets/SRPOMLLMs/srpo-sft-data)
+
+> **Self-reflection RL** dataset (for Self-reflection Reinforcement Learning):  
+> [SRPO_RL_datasets on Hugging Face Datasets](https://huggingface.co/datasets/bruce360568/SRPO_RL_datasets)
+
+
 ## Self-Reflection Cold Start 
 After you preprocess self-reflection sft data, please install LLaMA-Factory for Self-Reflection SFT:
 
@@ -187,7 +196,7 @@ sh examples/scripts/run_32b_sft_srpo.sh  # for 32B
 
 ### Verl Version
 
-Install the `Verl` Version
+Install the `Verl` Version and then transfer the data format following [Link](https://huggingface.co/datasets/hiyouga/geometry3k)
 ```bash
 cd SRPO_MLLMs/spro_rl_train/verl_srpo
 pip install -e .
