@@ -2,7 +2,7 @@
 
   <h1>
     <img src="assets/logo.svg" height="40px" style="vertical-align: middle;">
-    SRPO: Enhancing Multimodal LLM Reasoning via Reflection-Aware Reinforcement Learning
+    SRPO: Enhancing Multimodal LLM Reasoning via Reflection-Aware Reinforcement Learning (NeurIPS 2025 🔥)
   </h1>
 
   <p><em>A novel framework that enhances the reasoning capabilities of multimodal large language models</em></p>
