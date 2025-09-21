@@ -13,13 +13,13 @@
   <p>If you find this project useful, please give us a star 🌟.</p>
 
  <p>
-  <a href="https://arxiv.org/abs/xxxx.xxxxx">
+  <a href="https://arxiv.org/abs/2506.01713">
     <img src="https://img.shields.io/badge/Arxiv-Paper-red?logo=arxiv">
   </a>
   <a href="https://huggingface.co/datasets/SRPOMLLMs/srpo-sft-data">
     <img src="https://img.shields.io/badge/Hugging%20Face-Models-blue?logo=huggingface">
   </a>
-  <a href="https://huggingface.co/datasets/SRPOMLLMs/srpo-sft-data">
+  <a href="https://huggingface.co/datasets/bruce360568/SRPO_RL_datasets">
     <img src="https://img.shields.io/badge/Hugging%20Face-Dataset-yellow?logo=huggingface">
   </a>
   <a href="https://srpo.pages.dev">
